@@ -7,16 +7,13 @@ function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [display, setDisplay] = useState("block")
 
-  const loadMovies = () => {
-    fetch('https://api.b7web.com.br/cinema/') //Get na api de filmes
-      .then((res)=> {
-        return res.json(); //transformando a resposta da requisição em um json
-      })
-      .then((json) => {
-        setMovies(json); //Guardando a resposta no state Movies
-      })
+  const loadMovies = async () => {
+    let res = await fetch('https://api.b7web.com.br/cinema/'); //Get na api de filmes
+    let json = await res.json();
 
-      setDisplay("hidden")
+    setMovies(json);
+
+    setDisplay("hidden")
   }
 
   return (
