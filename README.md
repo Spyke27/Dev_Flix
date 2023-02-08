@@ -14,7 +14,7 @@
 
  ## Projeto rodando:
  
- 🔰 Link: <a href="">www.devflix.com.br</a>
+ 🔰 Link: <a href="https://dev-flix-psi.vercel.app/">www.devflix.com.br</a>
 ## Resultado 💻
  <hr>
  <div style="display: flex;">
