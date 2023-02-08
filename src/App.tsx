@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { Movie } from './types/Movie';
 
 function App() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   const loadMovies = () => {
     fetch('https://api.b7web.com.br/cinema/') //Get na api de filmes
@@ -22,7 +23,12 @@ function App() {
         Total de Filmes: {movies.length}
 
         <div>
-
+          {movies.map((item, index) => (
+              <div>
+                <img src={item.avatar} alt="Capa Filme" className='w-80 block' />
+                {item.titulo}
+              </div>
+          ))}
         </div>
     </div>
   )
